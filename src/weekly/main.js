@@ -22,19 +22,28 @@ define(function (require) {
 
         }
 
-        $.getJSON('/bongweek/calories', function (res) {
-
+        function callback (res) {
             // removeSpinner();
 
             if (+res.status === 0) {
-                drawer.draw(targetId, res.data).forEach(randomAnim);            
-            }
-            else {
+                drawer.draw(targetId, res.data).forEach(randomAnim);
+            } else if (+res.status === 302) {
+                locatoin.herf = res.statusInfo;
+            } else {
                 alert('获取数据异常，请稍后重试');
             }
 
+        }
 
+        $.ajax({
+            url: '/bongweek/calories',
+            data: {
+                "_": (+new Date)
+            },
+            success: callback,
+            dataType: 'json'
         });
+
     }
 
     $(function(){
