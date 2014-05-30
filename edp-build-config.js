@@ -1,7 +1,8 @@
 exports.input = __dirname;
 
 var path = require( 'path' );
-exports.output = path.resolve( __dirname, '..', 'bong-app/public' );
+exports.output = path.resolve( __dirname, '..', 'baebong/public' );
+// exports.output = path.resolve( __dirname, '..', 'bong-app/public' );
 
 console.log(exports.output);
 
