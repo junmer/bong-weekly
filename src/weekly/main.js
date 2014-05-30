@@ -49,7 +49,7 @@ define(function (require) {
         $('.bo-tip p')
             .on('click', function () {
                 $(this).css('top') == '0px' 
-                    ? $(this).css('top', '-85px') 
+                    ? $(this).css('top', '-90px') 
                     : $(this).css('top', '0');
             });
 
